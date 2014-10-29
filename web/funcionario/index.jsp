@@ -22,7 +22,7 @@
                 </thead>
                 <tbody>
                     <tr >
-                        <td>Fulano de tal</td>
+                        <td>Victor Pastori</td>
                         <td>1265</td>
                         <td><a href="funcionario/atenderPedido.jsp" class="btn btn-success btn-lg" role="button">Ver pedido</a></td>
                     </tr>
