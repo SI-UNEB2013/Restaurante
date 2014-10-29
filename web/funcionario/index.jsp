@@ -27,7 +27,7 @@
                         <td><a href="funcionario/atenderPedido.jsp" class="btn btn-success btn-lg" role="button">Ver pedido</a></td>
                     </tr>
                     <tr >
-                        <td>Maria terezinha</td>
+                        <td>Maria joaquina</td>
                         <td>261</td>
                         <td><a href="funcionario/atenderPedido.jsp" class="btn btn-success btn-lg" role="button">Ver pedido</a></td>
                     </tr>
