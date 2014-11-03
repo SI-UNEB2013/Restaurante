@@ -13,8 +13,8 @@
 
         <div class="col-lg-6">
 
-                        <form role="form">
-
+            <form method="post" action="produtoController"role="form">
+                <input type="hidden" name="acao" value="cad">
                             <div class="form-group">
                                 <label>Código</label>
                                 <input class="form-control" name="codigo">
