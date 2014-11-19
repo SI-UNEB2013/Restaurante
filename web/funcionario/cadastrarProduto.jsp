@@ -13,26 +13,27 @@
 
         <div class="col-lg-6">
 
-                        <form role="form">
-
+                        <form role="form" action="CadastraProduto" method="post" id="cadastraProduto">
+                            <div id="errors"></div>
+                            
                             <div class="form-group">
                                 <label>Código</label>
-                                <input class="form-control" name="codigo">
+                                <input class="form-control" name="codigo" id="codigo">
                             </div>
 							
 							<div class="form-group">
                                 <label>Nome do Produto</label>
-                                <input class="form-control" name="n_produto">
+                                <input class="form-control" name="n_produto" id="n_produto">
                             </div>
 							
 							<div class="form-group">
                                 <label>Ingredientes</label>
-                                <textarea class="form-control" rows="3" name="ingredientes"></textarea>
+                                <textarea class="form-control" rows="3" name="ingredientes" id="ingredientes"></textarea>
                             </div>
 							
-							<div class="form-group">
+                            <div class="form-group">
                                 <label>Foto do Produto</label>
-                                <input type="file" name="foto_produto">
+                                <input type="file" name="foto_produto" id="foto_produto">
                             </div>
 							
                             <button type="submit" class="btn btn-default">Salvar Produto</button>
