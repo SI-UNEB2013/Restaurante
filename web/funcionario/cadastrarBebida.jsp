@@ -13,26 +13,26 @@
 
         <div class="col-lg-6">
 
-            <form method="post" action="produtoController"role="form">
-                <input type="hidden" name="acao" value="cad">
+            <form method="post" action="produtoController" role="form" id="cadastraBebida">
+                <div id="errors"></div>
                             <div class="form-group">
                                 <label>Código</label>
-                                <input class="form-control" name="codigo">
+                                <input class="form-control" name="codigo" id="codigo">
                             </div>
 							
 							<div class="form-group">
                                 <label>Nome do Produto</label>
-                                <input class="form-control" name="n_produto">
+                                <input class="form-control" name="n_produto" id="n_produto">
                             </div>
 							
 							<div class="form-group">
                                 <label>Forecedor</label>
-                                <input class="form-control" name="fornecedor">
+                                <input class="form-control" name="fornecedor" id="fornecedor">
                             </div>
 							
 							<div class="form-group">
                                 <label>Foto do Produto</label>
-                                <input type="file" name="foto_produto">
+                                <input type="file" name="foto_produto" id="foto_produto">
                             </div>
 							
                             <button type="submit" class="btn btn-default">Salvar Produto</button>

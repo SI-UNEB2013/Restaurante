@@ -35,9 +35,6 @@
                         <a href="funcionario/cadastroProduto.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>Cadastrar Produto</a>
                     </li>
                     <li>
-                        <a href="funcionario/alteraProduto.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>Alterar Produto</a>
-                    </li>
-                    <li>
                             <a href="index.jsp"><i class="fa fa-fw fa-power-off"></i>Sair</a>
                     </li>
                 </ul>
