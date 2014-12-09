@@ -28,6 +28,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <h3>Produto 1</h3>
+                                <img src="images/Caneloni_foto-Thiago-Freire.jpg" class="img-thumbnail">
                                 <p>lkfjhsdlk fjhsdlkfjahsdf safsd asfasdfa sdf</p>
                                 <button type="submit" class="btn btn-success">Selecionar</button>
                             </div>
@@ -37,6 +38,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <h3>Produto 2</h3>
+                                <img src="images/Caneloni_foto-Thiago-Freire.jpg" class="img-thumbnail">
                                 <p>lkfjhsdlk fjhsdlkfjahsdf safsd asfasdfa sdf</p>
                                 <button type="submit" class="btn btn-success">Selecionar</button>
                             </div>
@@ -46,6 +48,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <h3>Produto 3</h3>
+                                <img src="images/Caneloni_foto-Thiago-Freire.jpg" class="img-thumbnail">
                                 <p>lkfjhsdlk fjhsdlkfjahsdf safsd asfasdfa sdf</p>
                                 <button type="submit" class="btn btn-success">Selecionar</button>
                             </div>
