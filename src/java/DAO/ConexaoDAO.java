@@ -12,7 +12,7 @@ public class ConexaoDAO {
     Connection conn;
     protected String database = "restaurante";
     protected String user = "root";
-    protected String password = "tarsis20";
+    protected String password = "";
 
     public void conectar() {
         try {
