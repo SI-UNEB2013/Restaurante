@@ -5,6 +5,9 @@ package controller;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import DAO.BebidasDAO;
+import bean.Bebida;
+import bean.Fornecedor;
 import bean.ProdutoBean;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -54,18 +57,33 @@ public class CadastraProduto extends HttpServlet {
         String n_produto = request.getParameter("n_produto");
         String ingredientes = request.getParameter("ingredientes");
         String foto_produto = request.getParameter("foto_produto");
+        Float preco = Float.parseFloat(request.getParameter("preco"));
+        
+        Fornecedor fornecedor = new Fornecedor();
+        fornecedor.setId(1);
+        
+        Bebida bebida = new Bebida();
+        bebida.setCodigo(codigo);
+        bebida.setNome(n_produto);
+        bebida.setFornecedor(fornecedor);
+        bebida.setFoto(foto_produto);
+        bebida.setPreco(preco);
+        BebidasDAO bebidaDao = new BebidasDAO();
+        
+        bebida = bebidaDao.incluir(bebida);
+                
+        // store bean in session
+        if(bebida == null) {
+            request.getSession().setAttribute("result", "Não foi possível cadastrar.");
+        } else {
+            request.getSession().setAttribute("produto", bebida);
+            request.getSession().setAttribute("result", "Produto cadastrado com sucesso.");
+        }
+        
         
 
-        ProdutoBean produtoBean = new ProdutoBean();
-        produtoBean.setCodigo(codigo);
-        produtoBean.setN_produto(n_produto);
-        produtoBean.setIngredientes(ingredientes);
-
-        // store bean in session
-        request.getSession().setAttribute("produto", produtoBean);
-        request.getSession().setAttribute("result", "Produto cadastrado com sucesso.");
-
         PrintWriter out = response.getWriter();
+        out.println(foto_produto);
         out.println("<h1>Cadastro realizado com sucesso</h1><br><br><hr>");
         // you now can forward to some view, for example some results.jsp
         //request.getRequestDispatcher("/cadastrarProduto.jsp").forward(request, response);

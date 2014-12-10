@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `pedido` (
 CREATE TABLE IF NOT EXISTS `produto` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
-  `codigo` int(11) NOT NULL,
+  `codigo` varchar(11) UNIQUE NOT NULL,
   `foto` varchar(500) NOT NULL,
   `preco` float NOT NULL,
   PRIMARY KEY (`id`)

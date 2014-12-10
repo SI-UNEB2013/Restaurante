@@ -12,16 +12,18 @@ public class ConexaoDAO {
     Connection conn;
     protected String database = "restaurante";
     protected String user = "root";
-    protected String password = "";
+    protected String password = "tarsis20";
 
     public void conectar() {
         try {
 
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            conn = DriverManager.getConnection("jdbc:mysql://localhost", this.user, this.password);
-
+            this.conn = DriverManager.getConnection("jdbc:mysql://localhost", this.user, this.password);
+            
+            this.conn.setSchema(this.database);
             //ver se funciona
-            conn.setSchema(this.database);
+
+            
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } catch (ClassNotFoundException c) {
@@ -36,7 +38,7 @@ public class ConexaoDAO {
     public PreparedStatement execute(String sql) throws SQLException {
         PreparedStatement stm;
 
-        stm = conn.prepareStatement(sql);
+        stm = this.conn.prepareStatement(sql);
         stm.executeUpdate();
         stm.close();
         return stm;

@@ -30,6 +30,12 @@
                                 <label>Ingredientes</label>
                                 <textarea class="form-control" rows="3" name="ingredientes" id="ingredientes"></textarea>
                             </div>
+                            
+                            
+                            <div class="form-group">
+                                <label>Preço</label>
+                                <input type="money" name="preco" id="preco">
+                            </div>
 							
                             <div class="form-group">
                                 <label>Foto do Produto</label>

@@ -24,11 +24,11 @@ public class Bebida extends ProdutoBean {
     public void setFornecedor(Fornecedor Fornecedor) {
         this.Fornecedor = Fornecedor;
     }
-    public int getIdproduto() {
+    public int getIdProduto() {
         return idproduto;
     }
 
-    public void setIdproduto(int idproduto) {
+    public void setIdProduto(int idproduto) {
         this.idproduto = idproduto;
     }
 }
