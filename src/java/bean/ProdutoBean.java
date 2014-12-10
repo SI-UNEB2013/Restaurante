@@ -10,15 +10,23 @@ package bean;
  * @author tarsis
  */
 public class ProdutoBean {
-
+    private int id;
     private String codigo;
-    private String n_produto;
-    private String ingredientes;
-    private String foto_produto;
+    private String nome;
+    private String foto;
+    private Float preco;
 
     public void ProdutoBean() {
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getCodigo() {
         return codigo;
     }
@@ -27,27 +35,28 @@ public class ProdutoBean {
         this.codigo = codigo;
     }
 
-    public String getN_produto() {
-        return n_produto;
+    public String getNome() {
+        return nome;
     }
 
-    public void setN_produto(String n_produto) {
-        this.n_produto = n_produto;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getIngredientes() {
-        return ingredientes;
+    public String getFoto() {
+        return foto;
     }
 
-    public void setIngredientes(String ingredientes) {
-        this.ingredientes = ingredientes;
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
-    public String getFoto_produto() {
-        return foto_produto;
+    public Float getPreco() {
+        return preco;
     }
 
-    public void setFoto_produto(String foto_produto) {
-        this.foto_produto = foto_produto;
+    public void setPreco(Float preco) {
+        this.preco = preco;
     }
+
 }

@@ -5,50 +5,56 @@ package bean;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/**
- *
- * @author tarsis
- */
+
 public class UsuarioBean {
+    
+    private Integer usuarioid;
+    private String login;
+    private String senha;
+    private String perfil;
+    private String nome;
 
-    private String codigo;
-    private String n_produto;
-    private String ingredientes;
-    private String foto_produto;
-
-    public void ClienteBean() {
+    public UsuarioBean() {
     }
 
-    public String getCodigo() {
-        return codigo;
+    public Integer getUsuarioId() {
+        return usuarioid;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setId(Integer id) {
+        this.usuarioid = id;
     }
 
-    public String getN_produto() {
-        return n_produto;
+    public String getLogin() {
+        return login;
     }
 
-    public void setN_produto(String n_produto) {
-        this.n_produto = n_produto;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public String getIngredientes() {
-        return ingredientes;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setIngredientes(String ingredientes) {
-        this.ingredientes = ingredientes;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
-    public String getFoto_produto() {
-        return foto_produto;
+    public String getPerfil() {
+        return perfil;
     }
 
-    public void setFoto_produto(String foto_produto) {
-        this.foto_produto = foto_produto;
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
     
 }
