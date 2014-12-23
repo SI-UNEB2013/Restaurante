@@ -30,6 +30,10 @@
                     </li>
                     <li>
                         <a href="cliente/pedidos.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>Pedidos</a>
+                        <ul>
+                            <li><a href="cliente/pedidos.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>Comidas</a></li>
+                             <li><a href="cliente/pedidos.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>Bebidas</a></li>
+                        </ul>
                     </li>
                     <li>
                             <a href="index.jsp"><i class="fa fa-fw fa-power-off"></i>Sair</a>

@@ -1,6 +1,7 @@
 package DAO;
 
-import bean.Bebida;
+import bean.Comida;
+import bean.UsuarioBean;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,13 +10,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class BebidasDAO extends ConexaoDAO{
+public class ComidasDAO extends ConexaoDAO{
 
-    public Bebida incluir(Bebida bebida) {
+    public Comida incluir(Comida comida) {
         conectar();
         
         String sql = "insert into restaurante.produto (nome, codigo, foto, preco)"
-                + "values ('" + bebida.getNome() + "','" + bebida.getCodigo() + "','" + bebida.getFoto() + "','" + bebida.getPreco() + "')";
+                + "values ('" + comida.getNome() + "','" + comida.getCodigo() + "','" + comida.getFoto() + "','" + comida.getPreco() + "')";
         PreparedStatement stm;
         try {
             //stm = this.execute(sql);
@@ -24,34 +25,35 @@ public class BebidasDAO extends ConexaoDAO{
             
             ResultSet rs = stm.getGeneratedKeys();
             if(rs.next()){
-                bebida.setIdProduto(rs.getInt(1));
+                comida.setIdProduto(rs.getInt(1));
             }
             
+            
+            sql = "insert into restaurante.comida (idproduto, ingredientes)"
+                + "values ('" + comida.getIdProduto() + "','" + comida.getIngredientes() + "')";
              
-            sql = "insert into restaurante.bebida (idproduto, idfornecedor)"
-                + "values ('" + bebida.getIdProduto() + "','" + bebida.getFornecedor().getId() + "')";
-             
-  //          stm = this.execute(sql);
             stm = this.conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             stm.executeUpdate();
             rs = stm.getGeneratedKeys();
             if(rs.next()){
-                bebida.setId(rs.getInt(1));
-            }          
+                comida.setId(rs.getInt(1));
+            }
+            
+            
             
         } catch (SQLException ex) {
-            Logger.getLogger("Erro ao salvar bebida").log(Level.SEVERE, null, ex);
-            bebida = null;
+            Logger.getLogger("Erro ao salvar comida").log(Level.SEVERE, null, ex);
+            comida = null;
         }
-        return bebida;
+        return comida;
     }
     
-    public void alterar(Bebida bebida)
+    public void alterar(UsuarioBean usuario)
     {
         
     }
     
-    public void excluir(int idproduto) {
+    public void excluir(){
         
     }
     /*

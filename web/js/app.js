@@ -8,9 +8,22 @@ $(function () {
         if ($('#n_produto').val() == '') {
             error += "Informe o nome do produto<br>";
         }
-        if ($('#ingredientes').val() == '') {
-            error += "Informe os ingredientes<br>";
+        
+        if ($('#tipo').val() == '') {
+            error += "Selecione o tipo de produto<br>";
+        } else {
+            if($('#tipo').val() == 'C') {
+                if ($('#ingredientes').val() == '') {
+                    error += "Informe os ingredientes<br>";
+                }    
+            } else {
+                if ($('#fornecedor').val() == '') {
+                    error += "Informe o fornecedor<br>";
+                }
+            }
+            
         }
+        
         if ($('#foto_produto').val() == '') {
             error += "Selecione uma foto<br>";
         }

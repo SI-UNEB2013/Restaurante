@@ -55,28 +55,49 @@ public class CadastraProduto extends HttpServlet {
                     throws ServletException, IOException {
         String codigo = request.getParameter("codigo");
         String n_produto = request.getParameter("n_produto");
+        String tipo = request.getParameter("tipo");
+        String fornecedor_id = request.getParameter("fornecedor_id");
         String ingredientes = request.getParameter("ingredientes");
         String foto_produto = request.getParameter("foto_produto");
         Float preco = Float.parseFloat(request.getParameter("preco"));
+        ProdutoBean produto;
         
-        Fornecedor fornecedor = new Fornecedor();
-        fornecedor.setId(1);
+        //se for comida
+        if(tipo == "C") {
+            
+            Fornecedor fornecedor = new Fornecedor();
+            fornecedor.setId(1);
         
-        Bebida bebida = new Bebida();
-        bebida.setCodigo(codigo);
-        bebida.setNome(n_produto);
-        bebida.setFornecedor(fornecedor);
-        bebida.setFoto(foto_produto);
-        bebida.setPreco(preco);
-        BebidasDAO bebidaDao = new BebidasDAO();
+            Bebida bebida = new Bebida();
+            bebida.setCodigo(codigo);
+            bebida.setNome(n_produto);
+            bebida.setFornecedor(fornecedor);
+            bebida.setFoto(foto_produto);
+            bebida.setPreco(preco);
+            BebidasDAO bebidaDao = new BebidasDAO();
         
-        bebida = bebidaDao.incluir(bebida);
-                
+            produto = bebidaDao.incluir(bebida);
+            
+        } else {
+            Fornecedor fornecedor = new Fornecedor();
+            fornecedor.setId(1);
+        
+            Bebida bebida = new Bebida();
+            bebida.setCodigo(codigo);
+            bebida.setNome(n_produto);
+            bebida.setFornecedor(fornecedor);
+            bebida.setFoto(foto_produto);
+            bebida.setPreco(preco);
+            BebidasDAO bebidaDao = new BebidasDAO();
+        
+            produto = bebidaDao.incluir(bebida);
+        }
+        
         // store bean in session
-        if(bebida == null) {
+        if(produto == null) {
             request.getSession().setAttribute("result", "Não foi possível cadastrar.");
         } else {
-            request.getSession().setAttribute("produto", bebida);
+            request.getSession().setAttribute("produto", produto);
             request.getSession().setAttribute("result", "Produto cadastrado com sucesso.");
         }
         

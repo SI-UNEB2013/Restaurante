@@ -9,14 +9,15 @@ package bean;
  *
  * @author tarsis
  */
-public class PedidoBean {
+public class ItemPedidoBean {
 
     private ProdutoBean produto;
     private Integer qtd;
     private ClienteBean cliente;
     private String status;
+    private float total;
 
-    public void PedidoBean() {
+    public void ItemPedidoBean() {
     }
 
     public ProdutoBean getProduto() {
@@ -49,6 +50,12 @@ public class PedidoBean {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+    
+    public float getTotal()
+    {
+        this.total = this.qtd * this.produto.getPreco();
+        return this.total;
     }
 
 }
