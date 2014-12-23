@@ -11,8 +11,8 @@ public class ConexaoDAO {
 
     Connection conn;
     protected String database = "restaurante";
-    protected String user = "root";
-    protected String password = "";
+    protected String user = "restaurante";
+    protected String password = "restaurante";
 
     public void conectar() {
         try {
@@ -20,7 +20,7 @@ public class ConexaoDAO {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             this.conn = DriverManager.getConnection("jdbc:mysql://localhost", this.user, this.password);
             
-            this.conn.setSchema(this.database);
+            //this.conn.setSchema(this.database);
             //ver se funciona
 
             
