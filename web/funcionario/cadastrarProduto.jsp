@@ -48,6 +48,7 @@
                                     <label>Fornecedor</label>
                                     <select name ="fornecedor" id="fornecedor" class="form-control">
                                         <option value="">Selecione</option>
+                                        <option value="1">Fornecedor 1</option>
                                     </select>
                                 </div>
 
@@ -71,14 +72,9 @@
                     </div>
         
             <div class="col-lg-6">
-                  <div class="thumbnail">
-                    <img data-src="holder.js/300x300" alt="...">
-                    <div class="caption">
-                      <h3>Thumbnail label</h3>
-                      <p>...</p>
-                      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                    </div>
-                 </div>
+                  
+                    <img src="images/Caneloni_foto-Thiago-Freire.jpg" class="img-thumbnail">
+                 
             </div>
         </div>
     </div>

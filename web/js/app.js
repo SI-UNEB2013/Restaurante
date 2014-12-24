@@ -12,20 +12,14 @@ $(function () {
         if ($('#n_produto').val() == '') {
             error += "Informe o nome do produto<br>";
         }
-        
-        if ($('#tipo').val() == '') {
-            error += "Selecione o tipo de produto<br>";
-        } else {
-            if($('input[name=tipo]:checked').val() == 'C') {
-                if ($('#ingredientes').val() == '') {
-                    error += "Informe os ingredientes<br>";
-                }    
-            } else if($('input[name=tipo]:checked').val() == 'B'){
-                if ($('#fornecedor').val() == '') {
-                    error += "Informe o fornecedor<br>";
-                }
+        if($('input[name=tipo]:checked').val() == 'C') {
+            if ($('#ingredientes').val() == '') {
+                error += "Informe os ingredientes<br>";
+            }    
+        } else if($('input[name=tipo]:checked').val() == 'B'){
+            if ($('#fornecedor').val() == '') {
+                error += "Informe o fornecedor<br>";
             }
-            
         }
         
         if ($('#foto_produto').val() == '') {
