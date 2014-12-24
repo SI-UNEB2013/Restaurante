@@ -6,7 +6,9 @@ package controller;
  * and open the template in the editor.
  */
 import DAO.BebidasDAO;
+import DAO.ComidasDAO;
 import bean.Bebida;
+import bean.Comida;
 import bean.Fornecedor;
 import bean.ProdutoBean;
 import java.io.IOException;
@@ -63,20 +65,18 @@ public class CadastraProduto extends HttpServlet {
         ProdutoBean produto;
         
         //se for comida
-        if(tipo == "C") {
+  
+        if(tipo.equals("C")) {
             
-            Fornecedor fornecedor = new Fornecedor();
-            fornecedor.setId(1);
+            Comida comida = new Comida();
+            comida.setCodigo(codigo);
+            comida.setNome(n_produto);
+            comida.setIngredientes(ingredientes);
+            comida.setFoto(foto_produto);
+            comida.setPreco(preco);
+            ComidasDAO comidasDao = new ComidasDAO();
         
-            Bebida bebida = new Bebida();
-            bebida.setCodigo(codigo);
-            bebida.setNome(n_produto);
-            bebida.setFornecedor(fornecedor);
-            bebida.setFoto(foto_produto);
-            bebida.setPreco(preco);
-            BebidasDAO bebidaDao = new BebidasDAO();
-        
-            produto = bebidaDao.incluir(bebida);
+            produto = comidasDao.incluir(comida);
             
         } else {
             Fornecedor fornecedor = new Fornecedor();

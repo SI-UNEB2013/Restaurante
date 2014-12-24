@@ -29,7 +29,7 @@ public class ComidasDAO extends ConexaoDAO{
             }
             
             
-            sql = "insert into restaurante.comida (idproduto, ingredientes)"
+            sql = "insert into restaurante.comida (idproduto, ingrediente)"
                 + "values ('" + comida.getIdProduto() + "','" + comida.getIngredientes() + "')";
              
             stm = this.conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);

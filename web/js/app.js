@@ -2,6 +2,10 @@ $(function () {
     $('#cadastraProduto').on('submit', function (e) {
 
         var error = '';
+        
+        if ($('input[name=tipo]:checked').val() == undefined) {
+            error += "Selecione o tipo do produto<br>";
+        }
         if ($('#codigo').val() == '') {
             error += "Informe o codigo do produto<br>";
         }
@@ -12,11 +16,11 @@ $(function () {
         if ($('#tipo').val() == '') {
             error += "Selecione o tipo de produto<br>";
         } else {
-            if($('#tipo').val() == 'C') {
+            if($('input[name=tipo]:checked').val() == 'C') {
                 if ($('#ingredientes').val() == '') {
                     error += "Informe os ingredientes<br>";
                 }    
-            } else {
+            } else if($('input[name=tipo]:checked').val() == 'B'){
                 if ($('#fornecedor').val() == '') {
                     error += "Informe o fornecedor<br>";
                 }
@@ -34,11 +38,26 @@ $(function () {
         }
     });
     
+    $("input[name=tipo]").on('change',function(e){
+        $('#form-details').removeClass('hide');
+        if($(e.target).val() == 'B') {
+            console.log('most beb');
+            $('#ingredientes').parent().hide();
+            $('#fornecedor').parent().show();
+        } else {
+            $('#ingredientes').parent().show();
+            $('#fornecedor').parent().hide();
+        }
+          
+        console.log($(e.target).val());
+    });
+    
+    
     $('#cadastraBebida').on('submit', function (e) {
 
         var error = '';
         if ($('#codigo').val() == '') {
-            error += "Informe o codigo do produto<br>";
+            error += "Informe o código do produto<br>";
         }
         if ($('#n_produto').val() == '') {
             error += "Informe o nome do produto<br>";

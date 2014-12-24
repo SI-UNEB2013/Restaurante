@@ -7,7 +7,7 @@
     </div>
 </div>
 
-
+<br>
 <div class="row">
     <div class="col-lg-12">
 
@@ -17,37 +17,70 @@
                             <div id="errors"></div>
                             
                             <div class="form-group">
-                                <label>Código</label>
-                                <input class="form-control" name="codigo" id="codigo">
+                                <label class="col-lg-4">Selecione o tipo</label>
+                                 <div class="btn-group " data-toggle="buttons">
+                                     <label class="pull-left btn btn-default">
+                                         <input type="radio" value="C" name="tipo" id="tipocomida"> Comida
+                                    </label>
+                                     <label class="btn btn-default">
+                                        <input type="radio" value="B" name="tipo" id="tipobebida"> Bebida
+                                    </label>
+                                </div>
                             </div>
-							
-							<div class="form-group">
-                                <label>Nome do Produto</label>
-                                <input class="form-control" name="n_produto" id="n_produto">
-                            </div>
-							
-							<div class="form-group">
-                                <label>Ingredientes</label>
-                                <textarea class="form-control" rows="3" name="ingredientes" id="ingredientes"></textarea>
-                            </div>
-                            
-                            
-                            <div class="form-group">
-                                <label>Preço</label>
-                                <input type="money" name="preco" id="preco">
-                            </div>
-							
-                            <div class="form-group">
-                                <label>Foto do Produto</label>
-                                <input type="file" name="foto_produto" id="foto_produto">
-                            </div>
-							
-                            <button type="submit" class="btn btn-default">Salvar Produto</button>
-                            <button type="reset" class="btn btn-default">Limpar Campos</button>
+                            <hr>
+                            <div id='form-details' class="hide">
+                                <div class="form-group">
+                                    <label>Código</label>
+                                    <input class="form-control" name="codigo" id="codigo">
+                                </div>
 
+                                <div class="form-group">
+                                    <label>Nome do Produto</label>
+                                    <input class="form-control" name="n_produto" id="n_produto">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Ingredientes</label>
+                                    <textarea class="form-control" rows="3" name="ingredientes" id="ingredientes"></textarea>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label>Fornecedor</label>
+                                    <select name ="fornecedor" id="fornecedor" class="form-control">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group ">
+                                    <label>Preço</label>
+                                    <input type="money" name="preco" id="preco" class="form-control ">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Foto do Produto</label>
+                                    <input type="file" class="form-control" name="foto_produto" id="foto_produto">
+                                </div>
+
+                                <button type="submit" class="btn btn-info">Salvar Produto</button>
+                                <button type="reset" class="btn btn-default">Limpar Campos</button>
+
+                            </div>
                         </form>
 
                     </div>
+        
+            <div class="col-lg-6">
+                  <div class="thumbnail">
+                    <img data-src="holder.js/300x300" alt="...">
+                    <div class="caption">
+                      <h3>Thumbnail label</h3>
+                      <p>...</p>
+                      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                    </div>
+                 </div>
+            </div>
+        </div>
     </div>
 
 </div>
