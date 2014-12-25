@@ -10,6 +10,8 @@ package bean;
  * @author tarsis
  */
 public class Comida extends ProdutoBean {
+
+    public static String TIPO = "C";
     
     private String ingredientes;
     private int idproduto;
@@ -31,6 +33,7 @@ public class Comida extends ProdutoBean {
 
     public void setIdProduto(int idproduto) {
         this.idproduto = idproduto;
+        super.setId(idproduto);
     }
     
 }

@@ -11,6 +11,8 @@ package bean;
  */
 public class Bebida extends ProdutoBean {
     
+    public static String TIPO = "B";
+    
     private Fornecedor Fornecedor;
     private int idproduto;
     

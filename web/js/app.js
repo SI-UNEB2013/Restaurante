@@ -22,7 +22,7 @@ $(function () {
             }
         }
         
-        if ($('#foto_produto').val() == '') {
+        if ($('#idProduto').val() == '' &&  $('#foto_produto').val() == '') {
             error += "Selecione uma foto<br>";
         }
 
@@ -35,11 +35,11 @@ $(function () {
     $("input[name=tipo]").on('change',function(e){
         $('#form-details').removeClass('hide');
         if($(e.target).val() == 'B') {
-            console.log('most beb');
+                
             $('#ingredientes').parent().hide();
-            $('#fornecedor').parent().show();
+            $('#fornecedor').parent().removeClass('hide').show();
         } else {
-            $('#ingredientes').parent().show();
+            $('#ingredientes').parent().removeClass('hide').show();
             $('#fornecedor').parent().hide();
         }
           

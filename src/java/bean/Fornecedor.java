@@ -11,11 +11,16 @@ package bean;
  */
 public class Fornecedor extends ProdutoBean{
 
+    private int id;
     private String nome;
 
     public Fornecedor() {
     }
 
+    public Fornecedor(int id) {
+        this.id = id;
+    }
+    
     public String getNome() {
         return nome;
     }

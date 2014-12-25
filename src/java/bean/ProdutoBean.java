@@ -12,6 +12,7 @@ package bean;
 public class ProdutoBean {
     private int id;
     private String codigo;
+    private String tipo;
     private String nome;
     private String foto;
     private Float preco;
@@ -25,6 +26,15 @@ public class ProdutoBean {
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
     
     public String getCodigo() {

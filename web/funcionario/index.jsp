@@ -24,7 +24,7 @@
                     <tr >
                         <td>Victor Pastori</td>
                         <td>1265</td>
-                        <td><a href="funcionario/atenderPedido.jsp" class="btn btn-success btn-lg" role="button">Ver pedido</a></td>
+                        <td><a href="Produtos?acao=editarProduto&id=10" class="btn btn-success btn-lg" role="button">Ver pedido</a></td>
                     </tr>
                     <tr >
                         <td>Maria joaquina</td>

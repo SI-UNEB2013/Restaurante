@@ -29,10 +29,10 @@
                         <a href="funcionario/index.jsp"><i class="fa fa-fw fa-dashboard"></i>Pedidos</a>
                     </li>
                     <li>
-                        <a href="funcionario/listarProdutos.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>Listar Produtos</a>
+                        <a href="Produtos"><i class="fa fa-fw fa-bar-chart-o"></i>Listar Produtos</a>
                     </li>
                     <li>
-                        <a href="funcionario/cadastroProduto.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>Cadastrar Produto</a>
+                        <a href="Produtos?acao=novoProduto"><i class="fa fa-fw fa-bar-chart-o"></i>Cadastrar Produto</a>
                     </li>
                     <li>
                             <a href="index.jsp"><i class="fa fa-fw fa-power-off"></i>Sair</a>
