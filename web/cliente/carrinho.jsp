@@ -1,25 +1,26 @@
 <jsp:include page="../topo.jsp" />
 <jsp:include page="menucliente.jsp" />
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- CONTEUDO-->
 
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Carrinho
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li class="active">
-                                <i class="fa fa-edit"></i> Edição de carrinho
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- /.row -->
-                
-                <h3 >Confirmar pedido</h3> 
-                
-                
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Carrinho
+        </h1>
+        <ol class="breadcrumb">
+            <li class="active">
+                <i class="fa fa-edit"></i> Edição de carrinho
+            </li>
+        </ol>
+    </div>
+</div>
+<!-- /.row -->
+
+<h3 >Confirmar pedido</h3> 
+
+
 <div class="row">
     <div class="col-lg-12">
 
@@ -29,29 +30,29 @@
                     <tr>
                         <th>Cod Produto</th>
                         <th>Produto</th>
+                        <th>Valor Unit.</th>
+                        <th>Qtd</th>
                         <th>Valor</th>
                     </tr>
                 </thead>
                 <tbody>
+
+                    <c:forEach items="${carrinho.getItens()}" var="item">
+                        <tr>
+                            <td>${item.produto.id}</td>
+                            <td>${item.produto.nome}</td>
+                            <td>${item.produto.preco}</td>
+                            <td>${item.qtd}</td>
+                            <td>${item.getTotal()}</td>
+        <!--                    <td><a href="Produtos?acao=editarProduto&id=${produto.id}" class="btn btn-success btn-lg" role="button">Editar</a></td>-->
+                        </tr>
+
+                    </c:forEach>
+
+
                     <tr >
-                        <td>1265</td>
-                        <td>Produto 1</td>
-                        <td>10,00</td>
-                        
-                    </tr>
-                    <tr >
-                        <td>261</td>
-                        <td>Produto 2</td>
-                        <td>10,00</td>
-                    </tr>
-                    
-                    <tr >
-                        <td colspan="2" align="right"><b>Total</b></td>
-                        <td><b>20,00</b></td>
-                    </tr>
-                        <tr >
-                        <td colspan="2" align="right"><b>Total</b></td>
-                        <td><b><></b></td>
+                        <td colspan="4" align="right"><b>Total</b></td>
+                        <td><b>${carrinho.getTotal()}</b></td>
                     </tr>
                 </tbody>
             </table>

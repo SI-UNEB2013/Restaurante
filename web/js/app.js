@@ -2,13 +2,12 @@ $(function () {
     $('#cadastraProduto').on('submit', function (e) {
 
         var error = '';
-        
-        if ($('input[name=tipo]:checked').val() == undefined) {
+        if ($('#idProduto').val() == ''){
+            if ($('input[name=tipo]:checked').val() == undefined) {
             error += "Selecione o tipo do produto<br>";
+            }
         }
-        if ($('#codigo').val() == '') {
-            error += "Informe o codigo do produto<br>";
-        }
+        
         if ($('#n_produto').val() == '') {
             error += "Informe o nome do produto<br>";
         }

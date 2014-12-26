@@ -59,7 +59,6 @@ public class ControlaCarrinho extends HttpServlet {
                     carrinho = new CarrinhoBean();
 
                     sessao.setAttribute("carrinho", carrinho);
-
                 }
 
                 //verifica se o produto existe no carrinho
@@ -71,13 +70,11 @@ public class ControlaCarrinho extends HttpServlet {
 
                             //incrementa a quantidade
                             item.setQtd(item.getQtd()+ 1);
-
+                            carrinho.calculaTotal();
                             existe = true;
 
                         }
-
                     }
-
                 }
 
                 //se não existe o item ou produto, cria um novo
@@ -92,9 +89,9 @@ public class ControlaCarrinho extends HttpServlet {
                     novoItem.setProduto(produto);
 
                     novoItem.setQtd(1);
-
                     //adiciona novo item
                     carrinho.addNovoItem(novoItem);
+                    carrinho.calculaTotal();    
                 }
 
                 //carrega a pagina do carrinho de compras

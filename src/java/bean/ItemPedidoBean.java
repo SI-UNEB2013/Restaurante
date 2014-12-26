@@ -34,7 +34,7 @@ public class ItemPedidoBean {
 
     public void setQtd(Integer qtd) {
         this.qtd = qtd;
-    }
+        }
 
     public ClienteBean getCliente() {
         return cliente;

@@ -20,8 +20,7 @@
                 </div>
                 <!-- /.row -->
                 
-    <h3>Comidas</h3> 
-    
+    <h3>Comidas</h3>
     
                 <div class="row">
                     <div class="col-lg-4 text-center">
@@ -30,7 +29,8 @@
                                 <h3>Produto 1</h3>
                                 <img src="images/Caneloni_foto-Thiago-Freire.jpg" class="img-thumbnail">
                                 <p>lkfjhsdlk fjhsdlkfjahsdf safsd asfasdfa sdf</p>
-                                <button type="submit" class="btn btn-success">Selecionar</button>
+                                <a href="ControlaCarrinho?acao=addProduto&idProduto=32"class="btn btn-success">Selecionar</a>
+                              
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                                 <h3>Produto 2</h3>
                                 <img src="images/Caneloni_foto-Thiago-Freire.jpg" class="img-thumbnail">
                                 <p>lkfjhsdlk fjhsdlkfjahsdf safsd asfasdfa sdf</p>
-                                <button type="submit" class="btn btn-success">Selecionar</button>
+                                  <a href="ControlaCarrinho?acao=addProduto&idProduto=31"class="btn btn-success">Selecionar</a>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                                 <h3>Produto 3</h3>
                                 <img src="images/Caneloni_foto-Thiago-Freire.jpg" class="img-thumbnail">
                                 <p>lkfjhsdlk fjhsdlkfjahsdf safsd asfasdfa sdf</p>
-                                <button type="submit" class="btn btn-success">Selecionar</button>
+                                  <a href="ControlaCarrinho?acao=addProduto&idProduto=30"class="btn btn-success">Selecionar</a>
                             </div>
                         </div>
                     </div>
