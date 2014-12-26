@@ -11,7 +11,6 @@ package bean;
  */
 public class ProdutoBean {
     private int id;
-    private String codigo;
     private String tipo;
     private String nome;
     private String foto;
@@ -35,14 +34,6 @@ public class ProdutoBean {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-    
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
     }
 
     public String getNome() {

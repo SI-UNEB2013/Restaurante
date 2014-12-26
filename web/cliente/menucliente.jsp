@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="cliente/index.jsp"><i class="fa fa-fw fa-dashboard"></i>Cardápio</a>
+                        <a href="Cardapio?tipo=C"><i class="fa fa-fw fa-dashboard"></i>Cardápio</a>
                     </li>
                     <li>
                         <a href="cliente/pedidos.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>Pedidos</a>

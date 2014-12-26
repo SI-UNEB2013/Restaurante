@@ -9,55 +9,64 @@
         <h1 class="page-header">
             Carrinho
         </h1>
-        <ol class="breadcrumb">
-            <li class="active">
-                <i class="fa fa-edit"></i> Edição de carrinho
-            </li>
-        </ol>
     </div>
 </div>
 <!-- /.row -->
 
-<h3 >Confirmar pedido</h3> 
-
-
 <div class="row">
+
     <div class="col-lg-12">
 
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover table-striped">
-                <thead>
-                    <tr>
-                        <th>Cod Produto</th>
-                        <th>Produto</th>
-                        <th>Valor Unit.</th>
-                        <th>Qtd</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <c:choose>
+            <c:when test="${carrinho == null || carrinho.getItens().size() == 0}">
+                
+                <h3>Carrinho vazio.</h3>
+                <a href="Cardapio?tipo=C" class="btn btn-default " role="button">Continuar escolhendo</a>
 
-                    <c:forEach items="${carrinho.getItens()}" var="item">
-                        <tr>
-                            <td>${item.produto.id}</td>
-                            <td>${item.produto.nome}</td>
-                            <td>${item.produto.preco}</td>
-                            <td>${item.qtd}</td>
-                            <td>${item.getTotal()}</td>
-        <!--                    <td><a href="Produtos?acao=editarProduto&id=${produto.id}" class="btn btn-success btn-lg" role="button">Editar</a></td>-->
-                        </tr>
+            </c:when>
+            <c:otherwise>
 
-                    </c:forEach>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Cod Produto</th>
+                                <th>Produto</th>
+                                <th>Valor Unit.</th>
+                                <th>Qtd</th>
+                                <th>Valor</th>
+                                <th>Excluir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <c:forEach items="${carrinho.getItens()}" var="item">
+                                <tr>
+                                    <td>${item.produto.id}</td>
+                                    <td>${item.produto.nome}</td>
+                                    <td>${item.produto.preco}</td>
+                                    <td>${item.qtd}</td>
+                                    <td>${item.getTotal()}</td>
+                                    <td> <a href="ControlaCarrinho?acao=removeProduto&idProduto=${item.produto.id}" class="btn btn-danger" role="button">x</a></td>
+                                </tr>
+
+                            </c:forEach>
 
 
-                    <tr >
-                        <td colspan="4" align="right"><b>Total</b></td>
-                        <td><b>${carrinho.getTotal()}</b></td>
-                    </tr>
-                </tbody>
-            </table>
-            <a href="cliente/logincliente.jsp" class="btn btn-success btn-lg" role="button">Confirmar compra</a>
-        </div>
+                            <tr >
+                                <td colspan="4" align="right"><b>Total</b></td>
+                                <td><b>${carrinho.getTotal()}</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="Cardapio?tipo=C" class="btn btn-default " role="button">Continuar escolhendo</a>
+                    <a href="cliente/logincliente.jsp" class="btn btn-success btn-lg" role="button">Confirmar compra</a>
+
+                </div>
+
+            </c:otherwise>
+        </c:choose>
+
     </div>
 
 </div>

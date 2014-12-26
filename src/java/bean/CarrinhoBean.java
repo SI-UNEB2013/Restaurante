@@ -28,9 +28,15 @@ public class CarrinhoBean {
     }
     
     public void removeItem(ItemPedidoBean item){
-           for(Iterator i = itens.iterator(); i.hasNext();){
-               i.remove();
-           }
+        
+        Iterator<ItemPedidoBean> i = this.itens.iterator();
+        while (i.hasNext()) {
+            ItemPedidoBean it = i.next(); // must be called before you can call i.remove()
+                   if(it.getProduto().getId() == item.getProduto().getId()){
+                        i.remove();    
+                        break;
+                   }
+         }
     }
     
     public float calculaTotal()

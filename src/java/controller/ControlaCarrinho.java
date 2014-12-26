@@ -37,7 +37,11 @@ public class ControlaCarrinho extends HttpServlet {
 
             String acao = request.getParameter("acao");
 
-            if (acao.equals("addProduto")) {
+            if(acao == null || acao.isEmpty()){
+             
+                request.getRequestDispatcher("/cliente/carrinho.jsp").forward(request, response);
+             
+            } else if (acao.equals("addProduto")) {
 
                 //recupera o id do produto que deve ser add no carrinho
                 int idProduto = Integer.parseInt(request.getParameter("idProduto"));
@@ -118,9 +122,10 @@ public class ControlaCarrinho extends HttpServlet {
                 itemRemove.setProduto(prodRemove);
 
                 carrinho.removeItem(itemRemove);
+                carrinho.calculaTotal();
 
                 //carrega a pagina do carrinho de compras
-                request.getRequestDispatcher("carrinho.jsp").forward(request, response);
+                request.getRequestDispatcher("/cliente/carrinho.jsp").forward(request, response);
 
             } else if (acao.equals("cancelaCompra")) {
 
@@ -131,7 +136,7 @@ public class ControlaCarrinho extends HttpServlet {
                 sessao.removeAttribute("carrinho");
 
                 //redireciona para pagina principal
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("Cardapio?tipo=C");
             }
 
         } catch (Exception erro) {
