@@ -25,20 +25,20 @@ public class ClienteController extends HttpServlet {
     public ClienteBean inserirCliente(HttpServletRequest request) {
         
         String nome = request.getParameter("nome");
-        String login = request.getParameter("login");
         String senha = request.getParameter("senha");
         String perfil = request.getParameter("perfil");
+        String cpf = request.getParameter("cpf");
+        String endereco = request.getParameter("endereço");
+        String telefone = request.getParameter("telefone");
         
         UsuarioBean usuario = new UsuarioBean();
         
         usuario.setNome(nome);
-        usuario.setLogin(login);
+        usuario.setLogin(cpf);
         usuario.setSenha(senha);
         usuario.setPerfil(perfil);
         
-        String cpf = request.getParameter("cpf");
-        String endereco = request.getParameter("endereço");
-        String telefone = request.getParameter("telefone");
+        
        
         ClienteBean cliente = new ClienteBean();
         
