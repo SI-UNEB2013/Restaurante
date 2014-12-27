@@ -3,7 +3,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="cliente/index.jsp">Gourmet Delivery</a>
+                <a class="navbar-brand" href="#">Gourmet Delivery</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -30,13 +30,9 @@
                     </li>
                     <li>
                         <a href="cliente/pedidos.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>Pedidos</a>
-                        <ul>
-                            <li><a href="cliente/pedidos.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>Comidas</a></li>
-                             <li><a href="cliente/pedidos.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>Bebidas</a></li>
-                        </ul>
                     </li>
                     <li>
-                            <a href="index.jsp"><i class="fa fa-fw fa-power-off"></i>Sair</a>
+                            <a href="Login?acao=logout"><i class="fa fa-fw fa-power-off"></i>Sair</a>
                     </li>
                 </ul>
             </div>
@@ -46,3 +42,4 @@
 <div id="page-wrapper">
     
             <div class="container-fluid">
+                

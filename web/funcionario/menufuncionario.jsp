@@ -3,7 +3,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.jsp">Gourmet Delivery</a>
+                <a class="navbar-brand" href="#">Gourmet Delivery</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -35,7 +35,7 @@
                         <a href="Produtos?acao=novoProduto"><i class="fa fa-fw fa-bar-chart-o"></i>Cadastrar Produto</a>
                     </li>
                     <li>
-                            <a href="index.jsp"><i class="fa fa-fw fa-power-off"></i>Sair</a>
+                             <a href="Login?acao=logout"><i class="fa fa-fw fa-power-off"></i>Sair</a>
                     </li>
                 </ul>
             </div>
