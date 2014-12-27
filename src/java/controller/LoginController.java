@@ -23,16 +23,21 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})
 public class LoginController extends HttpServlet {
 
-    public UsuarioBean logarUsuario(HttpServletRequest request) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         String username = request.getParameter("username");
         String senha = request.getParameter("senha");
         
         UsuarioDAO usuarioDao = new UsuarioDAO();
-        UsuarioBean usuario = usuarioDao.getById(username, senha);
-            
+        UsuarioBean usuario = usuarioDao.getByLogin(username, senha);
         
-       return usuario;
+        String forward;
+        
+        if (usuario.getPerfil()=="C"){
+            
+        }
+       RequestDispatcher view = request.getRequestDispatcher(forward);
+         view.forward(request, response);
     }
 
 }

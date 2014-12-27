@@ -2,6 +2,7 @@ package DAO;
 
 import bean.ProdutoBean;
 import bean.UsuarioBean;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,11 +28,12 @@ public class UsuarioDAO extends ConexaoDAO{
 
     }
     
-    public UsuarioBean getById(String username, String senha) {
+    public UsuarioBean getByLogin(String username, String senha) {
         try {
             conectar();
-            PreparedStatement preparedStatement = this.conn.prepareStatement("select * from restaurante.usario where usuario.login=?");
-            preparedStatement.setInt(1, id);
+            PreparedStatement preparedStatement = this.conn.prepareStatement("select * from restaurante.usario where usuario.login=? and usuario.senha=?");
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, senha);
 
             ResultSet rs = preparedStatement.executeQuery();
 
