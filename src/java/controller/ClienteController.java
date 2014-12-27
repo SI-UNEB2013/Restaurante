@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "ClienteController", urlPatterns = {"/ClienteController"})
 public class ClienteController extends HttpServlet {
 
-    public ClienteBean inserirCliente(HttpServletRequest request) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         String nome = request.getParameter("nome");
         String senha = request.getParameter("senha");
@@ -38,7 +38,8 @@ public class ClienteController extends HttpServlet {
         usuario.setSenha(senha);
         usuario.setPerfil(perfil);
         
-        
+        UsuarioDAO usuarioDao = new UsuarioDAO();
+            usuario = usuarioDao.incluir(usuario);
        
         ClienteBean cliente = new ClienteBean();
         
@@ -47,13 +48,14 @@ public class ClienteController extends HttpServlet {
         cliente.setTelefone(telefone);
         cliente.setUsuario(usuario);
         
+        
+       
         ClienteDAO clienteDao = new ClienteDAO();
             clienteDao.incluir(cliente);
-        UsuarioDAO usuarioDao = new UsuarioDAO();
-            usuarioDao.incluir(usuario);
+        
             
             
-        return cliente;
+        
     }
 
 }

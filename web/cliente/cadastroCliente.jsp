@@ -31,7 +31,7 @@
                                 <label>Senha</label>
                                 <input type="password" class="form-control" name="senha" id="senha">
                             </div>
-                            <button type="submit" class="btn btn-success btn-lg" role="button" value="Cadastrar">Cadastrar</button>
+                            <button type="submit" class="btn btn-success btn-lg" role="button" value="Login">Cadastrar</button>
 </form>
  </div>
 </div>

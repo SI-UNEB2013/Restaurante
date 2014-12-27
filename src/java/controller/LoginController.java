@@ -31,7 +31,7 @@ public class LoginController extends HttpServlet {
         UsuarioDAO usuarioDao = new UsuarioDAO();
         UsuarioBean usuario = usuarioDao.getByLogin(username, senha);
         
-        String forward;
+        String forward = "";
         
         if (usuario.getPerfil()=="C"){
             

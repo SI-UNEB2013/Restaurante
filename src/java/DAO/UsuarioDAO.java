@@ -6,26 +6,32 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
 public class UsuarioDAO extends ConexaoDAO{
 
-    public void incluir(UsuarioBean usuario) {
+    public UsuarioBean incluir(UsuarioBean usuario) {
         conectar();
         String sql = "insert into restaurante.usuario (nome, senha, login, perfil)"+
                      "values ("+usuario.getNome()+","+usuario.getSenha()+","+usuario.getLogin()+","+usuario.getPerfil()+")";
-        PreparedStatement stm1;
+        PreparedStatement stm;
         try {
-            stm1 = conn.prepareStatement(sql);
-            stm1.executeUpdate();
-            stm1.close();
+            stm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            stm.executeUpdate();
+            
+            ResultSet rs = stm.getGeneratedKeys();
+            if (rs.next()) {
+                usuario.setId(rs.getInt(1));
+            }
+            stm.close();
         } catch (SQLException ex) {
             Logger.getLogger("Não foi possível inserir").log(Level.SEVERE, null, ex);
         
     }
-
+            return usuario;
     }
     
     public UsuarioBean getByLogin(String username, String senha) {

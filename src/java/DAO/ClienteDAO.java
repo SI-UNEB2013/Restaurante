@@ -15,8 +15,8 @@ public class ClienteDAO extends ConexaoDAO {
 
     public void incluir(ClienteBean cliente){
         conectar();
-        String sql = "insert into restaurante.cliente (cpf, endereço, telefone, email)"+
-                     "values ("+cliente.getCpf()+","+cliente.getEndereco()+","+cliente.getTelefone()+","+cliente.getEmail()+")";
+        String sql = "insert into restaurante.cliente (cpf, endereço, telefone, email, idusuario)"+
+                     "values ("+cliente.getCpf()+","+cliente.getEndereco()+","+cliente.getTelefone()+","+cliente.getEmail()+","+cliente.getUsuario().getUsuarioId()+")";
                      
         PreparedStatement stm;
         try {
