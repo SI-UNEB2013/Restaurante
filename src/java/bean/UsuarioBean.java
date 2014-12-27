@@ -8,7 +8,7 @@ package bean;
 
 public class UsuarioBean {
     
-    private Integer usuarioid;
+    private Integer id;
     private String login;
     private String senha;
     private String perfil;
@@ -17,12 +17,12 @@ public class UsuarioBean {
     public UsuarioBean() {
     }
 
-    public Integer getUsuarioId() {
-        return usuarioid;
+    public Integer getId() {
+        return id;
     }
 
     public void setId(Integer id) {
-        this.usuarioid = id;
+        this.id = id;
     }
 
     public String getLogin() {

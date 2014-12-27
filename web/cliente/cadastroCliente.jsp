@@ -26,6 +26,11 @@
                                 <label>Telefone</label>
                                 <input class="form-control" name="telefone" id="telefone">
                             </div>
+                            
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input class="form-control" name="email" id="email">
+                            </div>
 							
                             <div class="form-group">
                                 <label>Senha</label>

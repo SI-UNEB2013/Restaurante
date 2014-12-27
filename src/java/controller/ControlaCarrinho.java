@@ -142,7 +142,6 @@ public class ControlaCarrinho extends HttpServlet {
         } catch (Exception erro) {
 
             request.setAttribute("erro", erro);
-
             request.getRequestDispatcher("/erro.jsp").forward(request, response);
 
         }

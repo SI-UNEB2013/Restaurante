@@ -16,11 +16,17 @@ public class UsuarioDAO extends ConexaoDAO{
     public UsuarioBean incluir(UsuarioBean usuario) {
     
         String sql = "insert into restaurante.usuario (nome, senha, login, perfil)"+
-                     "values ("+usuario.getNome()+","+usuario.getSenha()+","+usuario.getLogin()+","+usuario.getPerfil()+")";
+                     "values ( ?, ?, ?, ?)";
         PreparedStatement stm;
         try {
             conectar();
             stm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            
+            stm.setString(1, usuario.getNome());    
+            stm.setString(2, usuario.getSenha());
+            stm.setString(3, usuario.getLogin());
+            stm.setString(4, usuario.getPerfil());
+            
             stm.executeUpdate();
             
             ResultSet rs = stm.getGeneratedKeys();
@@ -29,10 +35,9 @@ public class UsuarioDAO extends ConexaoDAO{
             }
             stm.close();
         } catch (SQLException ex) {
-            Logger.getLogger("Não foi possível inserir").log(Level.SEVERE, null, ex);
-        
-    }
-            return usuario;
+            Logger.getLogger("Não foi possível inserir").log(Level.SEVERE, null, ex);        
+        }
+        return usuario;
     }
     
     public UsuarioBean getByLogin(String username, String senha) {
