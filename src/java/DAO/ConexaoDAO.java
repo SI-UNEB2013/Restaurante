@@ -11,8 +11,8 @@ public class ConexaoDAO {
 
     Connection conn;
     protected String database = "restaurante";
-    protected String user = "restaurante";
-    protected String password = "restaurante";
+    protected String user = "root";
+    protected String password = "12345678";
 
     public void conectar() {
         try {

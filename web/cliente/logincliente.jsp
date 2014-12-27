@@ -4,19 +4,19 @@
 <!DOCTYPE html>
 <div class="row">
  <div class="col-lg-6">
-<form role="form" action="cliente/telaPagamento.jsp" method="post" id="confirmaPagamento">
+<form role="form" action="cliente/telaPagamento.jsp" method="post" id="logincliente">
                             <div id="errors"></div>
                             
                             <div class="form-group">
                                 <label>CPF</label>
-                                <input class="form-control" name="numCartao" id="numCartao">
+                                <input class="form-control" name="cpf" id="cpf">
                             </div>
 							
 							<div class="form-group">
                                 <label>Senha</label>
                                 <input type="password" class="form-control" name="senha" id="senha">
                             </div>
-                            <input type="submit" class="btn btn-success btn-lg" role="button" value="Login">
+                            <button type="submit" class="btn btn-success btn-lg" role="button" value="Login">Login</button>
 </form>
  </div>
 </div>
