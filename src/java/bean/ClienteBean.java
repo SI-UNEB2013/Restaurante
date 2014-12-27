@@ -19,12 +19,12 @@ public class ClienteBean {
     public void ClienteBean () {
         
     }
-
-    public Usuario setUsuario(Usuario usuario) {
+    
+    public void setUsuario(UsuarioBean usuario) {
         this.Usuario = usuario;
     }
     
-    public Usuario getUsuario(){
+    public UsuarioBean getUsuario(){
         return this.Usuario;
     }
     

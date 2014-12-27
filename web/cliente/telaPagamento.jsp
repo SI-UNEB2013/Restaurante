@@ -50,7 +50,7 @@
         </div>
     </div>
         <div class="col-lg-6">
-            <form role="form" action="ConfirmaPagamento" method="post" id="confirmaPagamento">
+            <form role="form" action="cliente/index.jsp" method="post" id="confirmaPagamento">
                             <div id="errors"></div>
                             
                             <div class="form-group">
@@ -62,8 +62,10 @@
                                 <label>Senha</label>
                                 <input type="password" class="form-control" name="senha" id="senha">
                             </div>
+            <button type="submit" class="btn btn-success btn-lg" role="button" value="confirmar">Confirmar</button>
             </form>
-            <a href="funcionario/atenderPedido.jsp" class="btn btn-success btn-lg" role="button">Confirmar Pagamento</a>
+            
+        
         </div>
    
 

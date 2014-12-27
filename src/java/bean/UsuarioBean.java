@@ -13,7 +13,7 @@ public class UsuarioBean {
     private String senha;
     private String perfil;
     private String nome;
-
+    
     public UsuarioBean() {
     }
 
