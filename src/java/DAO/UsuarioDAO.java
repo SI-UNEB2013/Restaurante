@@ -14,11 +14,12 @@ import java.util.logging.Logger;
 public class UsuarioDAO extends ConexaoDAO{
 
     public UsuarioBean incluir(UsuarioBean usuario) {
-        conectar();
+    
         String sql = "insert into restaurante.usuario (nome, senha, login, perfil)"+
                      "values ("+usuario.getNome()+","+usuario.getSenha()+","+usuario.getLogin()+","+usuario.getPerfil()+")";
         PreparedStatement stm;
         try {
+            conectar();
             stm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             stm.executeUpdate();
             
@@ -58,23 +59,6 @@ public class UsuarioDAO extends ConexaoDAO{
             e.printStackTrace();
         }
         return null;
-    }
-
-    public void conectar() {
-        try {
-
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            conn = DriverManager.getConnection("jdbc:mysql://localhost", "root", "root");
-
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        } catch (ClassNotFoundException c) {
-            System.out.println(c.getMessage());
-        } catch (InstantiationException i) {
-            System.out.println(i.getMessage());
-        } catch (IllegalAccessException il) {
-            System.out.println(il.getMessage());
-        }
     }
 
 }
