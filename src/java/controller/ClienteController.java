@@ -6,6 +6,7 @@ package controller;
  * and open the template in the editor.
  */
 import DAO.ClienteDAO;
+import DAO.UsuarioDAO;
 import DAO.ComidasDAO;
 import bean.ClienteBean;
 import bean.UsuarioBean;
@@ -47,7 +48,11 @@ public class ClienteController extends HttpServlet {
         cliente.setUsuario(usuario);
         
         ClienteDAO clienteDao = new ClienteDAO();
-            clienteDao.incluir(cliente, usuario);
+            clienteDao.incluir(cliente);
+        UsuarioDAO usuarioDao = new UsuarioDAO();
+            usuarioDao.incluir(usuario);
+            
+            
         return cliente;
     }
 

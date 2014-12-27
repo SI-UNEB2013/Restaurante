@@ -8,8 +8,8 @@
                             <div id="errors"></div>
                             
                             <div class="form-group">
-                                <label>CPF</label>
-                                <input class="form-control" name="cpf" id="cpf">
+                                <label>Username</label>
+                                <input class="form-control" name="username" id="username">
                             </div>
 							
 							<div class="form-group">

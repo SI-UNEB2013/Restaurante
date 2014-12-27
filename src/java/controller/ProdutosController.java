@@ -55,11 +55,11 @@ public class ProdutosController extends HttpServlet {
             if (acao == null || acao.equals("")) {
 
                 //verifica o tipo de produto
-                String id = request.getParameter("tipo");
+                //String id = request.getParameter("tipo");
                 
                 request.setAttribute("produtos", produtoDao.getList());
                 //carrega a pagina do carrinho de compras
-                request.getRequestDispatcher("/funcionario/produtos.jsp").forward(request, response);
+                forward = "/funcionario/produtos.jsp";
             }
             else if (acao.equals("novoProduto")) {
                 forward = EDIT;
@@ -72,6 +72,10 @@ public class ProdutosController extends HttpServlet {
                 forward = EDIT;
                 
             } else if (acao.equals("excluir")) {
+                String nome = (request.getParameter("nome"));
+                
+                request.setAttribute("meunome", nome);
+                forward = "/funcionario/excluir.jsp";
 
             }
 

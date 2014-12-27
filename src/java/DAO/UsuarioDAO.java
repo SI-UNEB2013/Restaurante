@@ -1,7 +1,9 @@
 package DAO;
 
+import bean.ProdutoBean;
 import bean.UsuarioBean;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,18 +13,43 @@ public class UsuarioDAO extends ConexaoDAO{
 
     public void incluir(UsuarioBean usuario) {
         conectar();
-        String sql = "insert into coelba.solicitacao (Nome, Cpf, Telefone, Email, Cep, Numero)"
-                + "values ('" + usuario.getNome() + "','" + usuario.getCpf() + "','" + usuario.getTelefone() + "','" + usuario.getEmail() + "','" + usuario.getCep() + "','" + usuario.getNumero() + "')";
-        PreparedStatement stm;
+        String sql = "insert into restaurante.usuario (nome, senha, login, perfil)"+
+                     "values ("+usuario.getNome()+","+usuario.getSenha()+","+usuario.getLogin()+","+usuario.getPerfil()+")";
+        PreparedStatement stm1;
         try {
-            stm = conn.prepareStatement(sql);
-            stm.executeUpdate();
-            stm.close();
+            stm1 = conn.prepareStatement(sql);
+            stm1.executeUpdate();
+            stm1.close();
         } catch (SQLException ex) {
-            Logger.getLogger(SolicitacaoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger("Não foi possível inserir").log(Level.SEVERE, null, ex);
+        
+    }
 
+    }
+    
+    public UsuarioBean getById(String username, String senha) {
+        try {
+            conectar();
+            PreparedStatement preparedStatement = this.conn.prepareStatement("select * from restaurante.usario where usuario.login=?");
+            preparedStatement.setInt(1, id);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            if (rs.next()) {
+
+                UsuarioBean usuario = new UsuarioBean();
+                usuario.setId(rs.getInt("id"));
+                usuario.setLogin(rs.getString("login"));
+                usuario.setNome(rs.getString("nome"));
+                usuario.setPerfil(rs.getString("perfil"));
+                usuario.setSenha(rs.getString("senha"));
+                return usuario;
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
+        return null;
     }
 
     public void conectar() {
