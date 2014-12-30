@@ -18,9 +18,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
-@WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})
+@WebServlet(name = "LoginController", urlPatterns = {"/Login"})
 public class LoginController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,14 +31,30 @@ public class LoginController extends HttpServlet {
         
         UsuarioDAO usuarioDao = new UsuarioDAO();
         UsuarioBean usuario = usuarioDao.getByLogin(username, senha);
-        
+        if(usuario == null) {
+            request.setAttribute("error", "Usuário ou senha incorretos.");
+            request.getRequestDispatcher("/cliente/logincliente.jsp").forward(request, response);
+            return;
+        }
+        HttpSession sessao = request.getSession();
         String forward = "";
         
-        if (usuario.getPerfil()=="C"){
-            
+        if (usuario.getPerfil().equals("C")) {
+            ClienteDAO clienteDao = new ClienteDAO();
+             
+             ClienteBean cliente = clienteDao.getByUsuario(usuario);
+             sessao.setAttribute("usuario", usuario);
+             sessao.setAttribute("cliente", cliente);
+             forward = "/cliente/telaPagamento.jsp";
+             response.sendRedirect(request.getContextPath()+"/cliente/telaPagamento.jsp");
+             return;
+        } else {
+            request.setAttribute("error", "Perfil incorreto " + usuario.getPerfil());
+            request.getRequestDispatcher("/cliente/logincliente.jsp").forward(request, response);
+            forward = "/cliente/telaPagamento.jsp";
+            request.getRequestDispatcher(forward).forward(request, response);
+            //return ;
         }
-       RequestDispatcher view = request.getRequestDispatcher(forward);
-         view.forward(request, response);
     }
 
 }

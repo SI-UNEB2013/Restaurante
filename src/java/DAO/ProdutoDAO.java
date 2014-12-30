@@ -54,6 +54,7 @@ public class ProdutoDAO extends ConexaoDAO {
                 produto.setId(rs.getInt("id"));
                 produto.setNome(rs.getString("nome"));
                 produto.setFoto(rs.getString("foto"));
+                produto.setPreco(rs.getFloat("preco"));
                 produtos.add(produto);
             }
         } catch (SQLException e) {

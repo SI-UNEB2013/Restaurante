@@ -50,7 +50,7 @@
         </div>
     </div>
         <div class="col-lg-6">
-            <form role="form" action="cliente/index.jsp" method="post" id="confirmaPagamento">
+            <form role="form" action="Pagamento" method="post" id="confirmaPagamento">
                             <div id="errors"></div>
                             
                             <div class="form-group">

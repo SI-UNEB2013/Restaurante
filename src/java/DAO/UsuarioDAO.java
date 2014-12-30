@@ -34,8 +34,8 @@ public class UsuarioDAO extends ConexaoDAO{
                 usuario.setId(rs.getInt(1));
             }
             stm.close();
-        } catch (SQLException ex) {
-            Logger.getLogger("Não foi possível inserir").log(Level.SEVERE, null, ex);        
+        } catch (SQLException e) {
+            System.out.println (e.getMessage());    
         }
         return usuario;
     }
@@ -43,7 +43,7 @@ public class UsuarioDAO extends ConexaoDAO{
     public UsuarioBean getByLogin(String username, String senha) {
         try {
             conectar();
-            PreparedStatement preparedStatement = this.conn.prepareStatement("select * from restaurante.usario where usuario.login=? and usuario.senha=?");
+            PreparedStatement preparedStatement = this.conn.prepareStatement("select * from restaurante.usuario where usuario.login=? and usuario.senha=?");
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, senha);
 
@@ -61,7 +61,7 @@ public class UsuarioDAO extends ConexaoDAO{
 
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println (e.getMessage());
         }
         return null;
     }

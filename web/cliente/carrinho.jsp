@@ -35,7 +35,7 @@
                                 <th>Valor Unit.</th>
                                 <th>Qtd</th>
                                 <th>Valor</th>
-                                <th>Excluir</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,11 +43,15 @@
                             <c:forEach items="${carrinho.getItens()}" var="item">
                                 <tr>
                                     <td>${item.produto.id}</td>
-                                    <td>${item.produto.nome}</td>
+                                    <td width="450">${item.produto.nome}</td>
                                     <td>${item.produto.preco}</td>
-                                    <td>${item.qtd}</td>
+                                    <td><input type="text" class="form-control small input-sm" size=1 value="${item.qtd}"></td>
                                     <td>${item.getTotal()}</td>
-                                    <td> <a href="ControlaCarrinho?acao=removeProduto&idProduto=${item.produto.id}" class="btn btn-danger" role="button">x</a></td>
+                                    <td> 
+                                        <a href="ControlaCarrinho?acao=alteraQtd&qtd=&idProduto=${item.produto.id}" class="btn btn-success" role="button">
+                                            <span class="fa-check-circle fa-lg"> </span>Atualizar</a>&nbsp;&nbsp;&nbsp;
+                                        <a href="ControlaCarrinho?acao=removeProduto&idProduto=${item.produto.id}" class="btn btn-danger" role="button">x</a>
+                                    </td>
                                 </tr>
 
                             </c:forEach>

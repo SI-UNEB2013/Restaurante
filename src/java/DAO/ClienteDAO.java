@@ -33,9 +33,32 @@ public class ClienteDAO extends ConexaoDAO {
             
             stm.executeUpdate();
             stm.close();
-        } catch (SQLException ex) {
-            Logger.getLogger("Não foi possível inserir").log(Level.SEVERE, null, ex);    
-      }        
+        } catch (SQLException e) {
+            System.out.println (e.getMessage());    
+      }
+    }
+    
+    
+       public ClienteBean getByUsuario(UsuarioBean usuario) {
+        
+        try {
+            conectar();
+            PreparedStatement preparedStatement = this.conn.prepareStatement("select * from restaurante.cliente where idusuario=?");
+            preparedStatement.setInt(1, usuario.getId());
+
+            ResultSet rs = preparedStatement.executeQuery();
+            
+            ClienteBean cliente = new ClienteBean();
+            if (rs.next()) {
+                cliente.setUsuario(usuario);
+                
+            }
+            return cliente;
+            
+        } catch (SQLException e) {
+                System.out.println (e.getMessage());
+            return null;
+        }
     }
 }
         
