@@ -77,6 +77,8 @@ public class PagamentoController extends HttpServlet {
                 if(pedidosDao.incluir(pedido) == null) {
                     throw new ServletException("Não foi possível salvar o pedido.");
                 }
+                //remove o carrinho da sessão
+                sessao.removeAttribute("carrinho");
                 //carrega a pagina do carrinho de compras
                 request.getRequestDispatcher("/cliente/carrinho.jsp").forward(request, response);
 
